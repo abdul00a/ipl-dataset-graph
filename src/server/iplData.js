@@ -36,9 +36,6 @@ function matchWonPerYearPerTeam(matches) {
       if (matchObj.result !== 'no result') {
         matchPerYear[matchObj.season][matchObj.winner] =
           (matchPerYear[matchObj.season][matchObj.winner] || 0) + 1;
-      } else {
-        matchPerYear[matchObj.season]['No Result'] =
-          (matchPerYear[matchObj.season]['No Result'] || 0) + 1;
       }
       return matchPerYear;
     },

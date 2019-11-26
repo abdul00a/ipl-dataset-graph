@@ -34,8 +34,3 @@ createJSONobject(matchPlayedPerYear, 'matchPlayedPerYear');
 createJSONobject(matchWonPerTeam, 'wonPerTeamPerYear');
 createJSONobject(extraRuns, 'extraRuns');
 createJSONobject(economicalBolwer, 'economicalBolwer');
-
-console.log(matchPlayedPerYear);
-console.log(matchWonPerTeam);
-console.log(extraRuns);
-console.log(economicalBolwer);
