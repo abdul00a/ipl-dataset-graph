@@ -1,3 +1,4 @@
+// creating object for all team with corresponding to wining value array.
 function winnerTeams(winnerObj) {
   const DublicateAllTeams = Object.values(winnerObj).reduce(
     (teams, winnerTeamObj) => {
@@ -8,7 +9,7 @@ function winnerTeams(winnerObj) {
   );
   const allTeams = [...new Set(DublicateAllTeams)];
   const teamsWinningData = Object.values(winnerObj).reduce((teams, teamObj) => {
-    allTeams.map(teamName => {
+    allTeams.forEach(teamName => {
       if (!teams.hasOwnProperty(teamName)) {
         teams[teamName] = [];
       }
@@ -17,14 +18,13 @@ function winnerTeams(winnerObj) {
       } else {
         teams[teamName].push(0);
       }
-      return 0;
     });
     return teams;
   }, {});
   return Object.entries(teamsWinningData);
 }
-
-function baiscHighcharts(
+// creating a highcharts for basics charts.
+function basicHighcharts(
   requestPath,
   containerId,
   title,
@@ -87,7 +87,7 @@ function baiscHighcharts(
       });
     });
 }
-
+// creating a stack highcharts for winner team of every year.
 function stackCharts(requestPath, containerId, title, subtitle, yAxisText) {
   fetch(requestPath)
     .then(response => response.json())
@@ -134,8 +134,9 @@ function stackCharts(requestPath, containerId, title, subtitle, yAxisText) {
     });
 }
 
+// its a main function which are calling all fetch request for representing highcharts.
 function main() {
-  baiscHighcharts(
+  basicHighcharts(
     '../output/matchPlayedPerYear.json',
     'container1',
     'Number of Matches Played Per Team Per Year',
@@ -152,7 +153,7 @@ function main() {
     'Total Number of Wins'
   );
 
-  baiscHighcharts(
+  basicHighcharts(
     '../output/extraRuns.json',
     'container2',
     'Extra Runs given by Bowling team',
@@ -161,7 +162,7 @@ function main() {
     'Extra Runs: <b>{point.y}</b>'
   );
 
-  baiscHighcharts(
+  basicHighcharts(
     '../output/economicalBolwer.json',
     'container3',
     'Top 10 Economical Bowler.',
