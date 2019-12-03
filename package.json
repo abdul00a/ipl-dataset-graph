@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "convert-csv-to-json": "0.0.15"
+    "convert-csv-to-json": "0.0.15",
+    "pg": "^7.14.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0",

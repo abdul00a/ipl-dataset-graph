@@ -135,9 +135,46 @@ function stackCharts(requestPath, containerId, title, subtitle, yAxisText) {
 }
 
 // its a main function which are calling all fetch request for representing highcharts.
+// function main() {
+//   basicHighcharts(
+//     '../output/matchPlayedPerYear.json',
+//     'container1',
+//     'Number of Matches Played Per Team Per Year',
+//     'Season 2008 - 2017',
+//     'No. of Matches played',
+//     'matched played: <b>{point.y}</b>'
+//   );
+
+//   stackCharts(
+//     '../output/wonPerTeamPerYear.json',
+//     'container4',
+//     'Number of Matches won by per team per year',
+//     'Season 2008 - 2017',
+//     'Total Number of Wins'
+//   );
+
+//   basicHighcharts(
+//     '../output/extraRuns.json',
+//     'container2',
+//     'Extra Runs given by Bowling team',
+//     'Season 2016.',
+//     'Extra Runs',
+//     'Extra Runs: <b>{point.y}</b>'
+//   );
+
+//   basicHighcharts(
+//     '../output/economicalBolwer.json',
+//     'container3',
+//     'Top 10 Economical Bowler.',
+//     'Season 2015.',
+//     'Economy Rate',
+//     'Economy: <b>{point.y}</b>'
+//   );
+// }
+
 function main() {
   basicHighcharts(
-    '../output/matchPlayedPerYear.json',
+    '../sql_output/matchPlayedPerYear.json',
     'container1',
     'Number of Matches Played Per Team Per Year',
     'Season 2008 - 2017',
@@ -146,16 +183,16 @@ function main() {
   );
 
   stackCharts(
-    '../output/wonPerTeamPerYear.json',
-    'container4',
+    '../sql_output/matchesWonPerTeamPerYear.json',
+    'container2',
     'Number of Matches won by per team per year',
     'Season 2008 - 2017',
     'Total Number of Wins'
   );
 
   basicHighcharts(
-    '../output/extraRuns.json',
-    'container2',
+    '../sql_output/extraRunsOfBowlingTeam.json',
+    'container3',
     'Extra Runs given by Bowling team',
     'Season 2016.',
     'Extra Runs',
@@ -163,8 +200,8 @@ function main() {
   );
 
   basicHighcharts(
-    '../output/economicalBolwer.json',
-    'container3',
+    '../sql_output/economyBowler.json',
+    'container4',
     'Top 10 Economical Bowler.',
     'Season 2015.',
     'Economy Rate',
